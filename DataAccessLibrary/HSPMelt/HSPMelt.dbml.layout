@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11.25" name="HSPMelt">
+  <DataContextMoniker Name="/HSPMeltDataContext" />
+  <nestedChildShapes>
+    <classShape Id="80de08c7-e9d0-4924-b4df-85b7d7a181bc" absoluteBounds="3.125, 3.125, 2, 7.9245426432291648">
+      <DataClassMoniker Name="/HSPMeltDataContext/BagHouse" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2a3b6a95-1854-4802-9015-69a7ad7952dd" absoluteBounds="3.14, 3.585, 1.9700000000000002, 7.3645426432291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ec1870e1-53c9-40ec-94e0-a34dd75387b2" absoluteBounds="0.625, 3.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/HSPMeltDataContext/Station" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6b45a1e4-a7c0-4bc8-bd08-37d0e7b20e66" absoluteBounds="0.64, 3.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.625 : 3.81814697265625); (3.125 : 3.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HSPMeltDataContext/Station/Station_BagHouse" />
+      <nodes>
+        <classShapeMoniker Id="ec1870e1-53c9-40ec-94e0-a34dd75387b2" />
+        <classShapeMoniker Id="80de08c7-e9d0-4924-b4df-85b7d7a181bc" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
