@@ -10,7 +10,6 @@ namespace CaliburnApp
 {
     public class Bootstrapper : BootstrapperBase
     {
-        private CompositionContainer _Container;
         public Bootstrapper()
         {
             Initialize();
@@ -24,7 +23,13 @@ namespace CaliburnApp
 
         protected override void Configure()
         {
-            _Container = new CompositionContainer();
+            var container = new CompositionContainer();
+            var batch = new CompositionBatch();
+            batch.AddExport(ConfigureAutoMapper());
+            batch.AddExport<IWindowManager>(new WindowManager());
+            batch.AddExport<IEventAggregator>(new EventAggregator());
+
+            container.Compose(batch);
         }
 
         private IMapper ConfigureAutoMapper()
