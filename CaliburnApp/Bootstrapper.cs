@@ -3,6 +3,7 @@ using Caliburn.Micro;
 using CaliburnApp.Models;
 using CaliburnApp.ViewModels;
 using DataAccessLibrary.HSPMelt;
+using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.Windows;
 
@@ -25,9 +26,9 @@ namespace CaliburnApp
         {
             var container = new CompositionContainer();
             var batch = new CompositionBatch();
-            batch.AddExport(ConfigureAutoMapper());
-            batch.AddExport<IWindowManager>(new WindowManager());
-            batch.AddExport<IEventAggregator>(new EventAggregator());
+            batch.AddExportedValue(ConfigureAutoMapper());
+            batch.AddExportedValue<IWindowManager>(new WindowManager());
+            batch.AddExportedValue<IEventAggregator>(new EventAggregator());
 
             container.Compose(batch);
         }
