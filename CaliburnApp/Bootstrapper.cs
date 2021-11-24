@@ -11,6 +11,9 @@ namespace CaliburnApp
 {
     public class Bootstrapper : BootstrapperBase
     {
+        //dependancy injection
+        private CompositionContainer container = new CompositionContainer();
+
         public Bootstrapper()
         {
             Initialize();
@@ -24,7 +27,6 @@ namespace CaliburnApp
 
         protected override void Configure()
         {
-            var container = new CompositionContainer();
             var batch = new CompositionBatch();
             batch.AddExportedValue(ConfigureAutoMapper());
             batch.AddExportedValue<IWindowManager>(new WindowManager());
